@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{15826CB6-684F-46D0-8213-FB36D7CC4A38}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Heeelp.Core.Process.Event</RootNamespace>
+    <AssemblyName>Heeelp.Core.Process.Event</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Laboratorio|AnyCPU'">
+    <OutputPath>bin\Laboratorio\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Homol|AnyCPU'">
+    <OutputPath>bin\Homol\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Expertise\ExpertiseMarketingAdd.cs" />
+    <Compile Include="Expertise\ExpertiseCreatedFIleEvent.cs" />
+    <Compile Include="Expertise\ExpertiseAdded .cs" />
+    <Compile Include="Expertise\ExpertiseNotAdded.cs" />
+    <Compile Include="Expertise\ExpertiseDeleted.cs" />
+    <Compile Include="Expertise\ExpertiseNotDeleted.cs" />
+    <Compile Include="Expertise\ExpertiseNotUpdated.cs" />
+    <Compile Include="Expertise\ExpertiseUpdated.cs" />
+    <Compile Include="Person\PersonAddressDeleted.cs" />
+    <Compile Include="Person\PersonAddressNotDeleted.cs" />
+    <Compile Include="Person\PersonBlocked.cs" />
+    <Compile Include="Person\PersonBranchCreated.cs" />
+    <Compile Include="Person\PersonBranchDeleted.cs" />
+    <Compile Include="Person\PersonBranchNotCreated.cs" />
+    <Compile Include="Person\PersonBranchNotDeleted.cs" />
+    <Compile Include="Person\PersonBranchNotUpdated.cs" />
+    <Compile Include="Person\PersonBranchUpdated.cs" />
+    <Compile Include="Person\PersonActivationUpdatedSucessEvent.cs" />
+    <Compile Include="Person\PersonStatusUpdatedSucessEvent.cs" />
+    <Compile Include="Person\PersonNotSyncedEvent.cs" />
+    <Compile Include="Person\AdminAllPersonSyncedSuccessEvent.cs" />
+    <Compile Include="Person\PersonSyncedSuccessEvent.cs" />
+    <Compile Include="Person\PersonEmployeeCreatedSucessEvent.cs" />
+    <Compile Include="Person\PersonEmployeeNotCreatedEvent.cs" />
+    <Compile Include="Person\PersonContractAdded.cs" />
+    <Compile Include="Person\PersonContractNotAdded.cs" />
+    <Compile Include="Person\PersonContractNotUpdated.cs" />
+    <Compile Include="Person\PersonContractUpdated.cs" />
+    <Compile Include="Person\PersonCompanyCreatedSucessEvent.cs" />
+    <Compile Include="Person\PersonCompanyNotCreatedEvent.cs" />
+    <Compile Include="Person\PersonDeleted.cs" />
+    <Compile Include="Person\PersonProspectFileAddEvent.cs" />
+    <Compile Include="Person\PersonDocumentFileAddedEvent.cs" />
+    <Compile Include="Person\PersonDocumentAdded.cs" />
+    <Compile Include="Person\PersonDocumentDeleted.cs" />
+    <Compile Include="Person\PersonDocumentNotAdded.cs" />
+    <Compile Include="Person\PersonDocumentNotDeleted.cs" />
+    <Compile Include="Person\PersonDocumentNotUpdated.cs" />
+    <Compile Include="Person\PersonDocumentUpdated.cs" />
+    <Compile Include="Person\PersonExpertiseAdded.cs" />
+    <Compile Include="Person\PersonExpertiseApproved.cs" />
+    <Compile Include="Person\PersonExpertiseNotAdded.cs" />
+    <Compile Include="Person\PersonExpertiseNotApproved.cs" />
+    <Compile Include="Person\PersonExpertiseNotRemoved.cs" />
+    <Compile Include="Person\PersonExpertiseRemoved.cs" />
+    <Compile Include="Person\PersonFinanceAddressAdded.cs" />
+    <Compile Include="Person\PersonFinanceAddressNotAdded.cs" />
+    <Compile Include="Person\PersonFinanceAddressNotUpdated.cs" />
+    <Compile Include="Person\PersonFinanceAddressUpdated.cs" />
+    <Compile Include="Person\PersonGeneralInfoNotUpdated.cs" />
+    <Compile Include="Person\PersonGeneralInfoUpdated.cs" />
+    <Compile Include="Person\PersonInterestAdded.cs" />
+    <Compile Include="Person\PersonInterestApproved.cs" />
+    <Compile Include="Person\PersonInterestNotAdded.cs" />
+    <Compile Include="Person\PersonInterestNotApproved.cs" />
+    <Compile Include="Person\PersonInterestNotRemoved.cs" />
+    <Compile Include="Person\PersonInterestRemoved.cs" />
+    <Compile Include="Person\PersonLogoNotUpdated.cs" />
+    <Compile Include="Person\PersonLogoUpdated.cs" />
+    <Compile Include="Person\PersonNotBlocked.cs" />
+    <Compile Include="Person\PersonNotDeleted.cs" />
+    <Compile Include="Person\PersonNotSettedAsAdvertiser.cs" />
+    <Compile Include="Person\PersonNotSettedAsProfessional.cs" />
+    <Compile Include="Person\PersonNotSettedAsSpecialist.cs" />
+    <Compile Include="Person\PersonProfessionalContactInfoNotUpdated.cs" />
+    <Compile Include="Person\PersonProfessionalContactInfoUpdated.cs" />
+    <Compile Include="Person\PersonProfessionalDescriptionInfoNotUpdated.cs" />
+    <Compile Include="Person\PersonProfessionalDescriptionInfoUpdated.cs" />
+    <Compile Include="Person\PersonProfessionalHistoryInfoNotUpdated.cs" />
+    <Compile Include="Person\PersonProfessionalHistoryInfoUpdated.cs" />
+    <Compile Include="Person\PersonProfessionalServicesInfoNotUpdated.cs" />
+    <Compile Include="Person\PersonProfessionalServicesInfoUpdated.cs" />
+    <Compile Include="Person\PersonProfessionalSocialInfoNotUpdated.cs" />
+    <Compile Include="Person\PersonProfessionalSocialInfoUpdated.cs" />
+    <Compile Include="Person\PersonServiceAddressAdded.cs" />
+    <Compile Include="Person\PersonServiceAddressNotAdded.cs" />
+    <Compile Include="Person\PersonServiceAddressNotUpdated.cs" />
+    <Compile Include="Person\PersonServiceAddressUpdated.cs" />
+    <Compile Include="Person\PersonSettedAsAdvertiser.cs" />
+    <Compile Include="Person\PersonSettedAsProfessional.cs" />
+    <Compile Include="Person\PersonSettedAsSpecialist.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User\AuthProviderFacebookAdded.cs" />
+    <Compile Include="User\AuthProviderFacebookNotAdded.cs" />
+    <Compile Include="User\AuthProviderGoogleAdded.cs" />
+    <Compile Include="User\AuthProviderGoogleNotAdded.cs" />
+    <Compile Include="User\AuthProviderHeeelpAdded.cs" />
+    <Compile Include="User\AuthProviderHeeelpNotAdded.cs" />
+    <Compile Include="User\PasswordChanged.cs" />
+    <Compile Include="User\NotActivatedNewUserEvent.cs" />
+    <Compile Include="User\PasswordNotChanged.cs" />
+    <Compile Include="User\PasswordNotRemembered.cs" />
+    <Compile Include="User\PasswordRemembered.cs" />
+    <Compile Include="User\UserAuthModeChanged.cs" />
+    <Compile Include="User\UserAuthModeNotChanged.cs" />
+    <Compile Include="User\UserBlocked.cs" />
+    <Compile Include="User\UserCaptchaNotValidated.cs" />
+    <Compile Include="User\UserCaptchaValidated.cs" />
+    <Compile Include="User\NewUserWelcomeMessageEvent.cs" />
+    <Compile Include="User\UserCreatedFIleEvent.cs" />
+    <Compile Include="User\UserActivatedEvent.cs" />
+    <Compile Include="User\UserCreatedPromotionEvent.cs" />
+    <Compile Include="User\UserCreatedNotificationEvent.cs" />
+    <Compile Include="User\UserNotSyncedEvent.cs" />
+    <Compile Include="User\UserSyncedSuccessEvent.cs" />
+    <Compile Include="User\UserCreatedSuccessEvent.cs" />
+    <Compile Include="User\UserDeleted.cs" />
+    <Compile Include="User\UserEnrollmentEmailNotValidated.cs" />
+    <Compile Include="User\UserEnrollmentEmailValidated.cs" />
+    <Compile Include="User\UserManagerProfileNotSetted.cs" />
+    <Compile Include="User\UserManagerProfileSetted.cs" />
+    <Compile Include="User\UserNotBlocked.cs" />
+    <Compile Include="User\UserNotCreatedEvent.cs" />
+    <Compile Include="User\UserNotDeleted.cs" />
+    <Compile Include="User\UserOperatorProfileNotSetted.cs" />
+    <Compile Include="User\UserOperatorProfileSetted.cs" />
+    <Compile Include="User\UserPhotoChanged.cs" />
+    <Compile Include="User\UserPhotoNotChanged.cs" />
+    <Compile Include="User\UserPreferencesNotUpdated.cs" />
+    <Compile Include="User\UserPreferencesUpdated.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Location\" />
+    <Folder Include="Page\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Heeelp.Core.Common\Heeelp.Core.Common.csproj">
+      <Project>{baf088f8-3fcb-45ef-a228-6424c34c65ca}</Project>
+      <Name>Heeelp.Core.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure\Heeelp.Core.Infrastructure.csproj">
+      <Project>{b5786d07-5888-4df5-b295-3fea593f3bfe}</Project>
+      <Name>Heeelp.Core.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

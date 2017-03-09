@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Heeelp.Core.Domain.Page">
+    <Position X="5" Y="10.5" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAgEAAAAgAAAABAACAASAAQAIEgAAAAAAAAAACAA=</HashCode>
+      <FileName>PageAggregate\Page.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="PageType" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Menu" />
+      <Property Name="PageInteraction" />
+      <Property Name="UserInteraction" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Heeelp.Core.Domain.Menu">
+    <Position X="10" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BACCAABIAAAQAAAAAAAAAAAAAAAABAQEAAAACAAAAAA=</HashCode>
+      <FileName>Menu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Heeelp.Core.Domain.PageInteraction">
+    <Position X="6.25" Y="15.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAACCAAEAAAyQAYAAAAAAAAAAAAABIAgAQAACAAAAAE=</HashCode>
+      <FileName>PageAggregate\PageInteraction.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Page" />
+      <Property Name="InteractionType" />
+      <Property Name="ServerInstance" />
+      <Property Name="UserSession" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Heeelp.Core.Domain.UserInteraction">
+    <Position X="5.75" Y="6.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAwQAEAAAAAIAAAAAAABAAAAAAAAAAACgE=</HashCode>
+      <FileName>UserInteraction.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="UserQuery" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Heeelp.Core.Domain.ServerInstance">
+    <Position X="6" Y="21.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAQAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>ServerInstance.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Heeelp.Core.Domain.UserSession">
+    <Position X="10" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABCAEAAAABQAAgCAAAAAgAIAAAEQAAABEAAAgEAAA=</HashCode>
+      <FileName>UserSession.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Heeelp.Core.Domain.InteractionType">
+    <Position X="2.75" Y="16.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAgAAAAAAAAAAE=</HashCode>
+      <FileName>InteractionType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Heeelp.Core.Domain.PageType">
+    <Position X="2" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAQAAAAAAAAgAAAAAAAACAA=</HashCode>
+      <FileName>PageAggregate\PageType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Heeelp.Core.Domain.UserQuery">
+    <Position X="2.75" Y="6.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAIAAAAIQgAAAAQEAAgAAAAAAAAAgA=</HashCode>
+      <FileName>UserQuery.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Heeelp.Core.Domain.User">
+    <Position X="14.5" Y="1.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AIACKAAASCEYAgAkpACQkAwAAiRAAJwgAQIAKQYCEAE=</HashCode>
+      <FileName>UserAggregate\User.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="UserFile" />
+      <Property Name="UserPreference" />
+      <Property Name="UserHistory" />
+      <Property Name="UserGroupUser" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Heeelp.Core.Domain.UserFile">
+    <Position X="9.75" Y="3" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAIIAgAAAAAAAAgAAAAAAIAAAA=</HashCode>
+      <FileName>UserAggregate\UserFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Heeelp.Core.Domain.UserGroup">
+    <Position X="21.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAgAAAAAAQAAAAAAAAkAAAAAAAAAAA=</HashCode>
+      <FileName>UserAggregate\UserGroup.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="UserGroupMenu" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Heeelp.Core.Domain.UserGroupMenu">
+    <Position X="25" Y="9" Width="1.5" />
+    <AssociationLine Name="UserGroup" Type="Heeelp.Core.Domain.UserGroup" FixedFromPoint="true">
+      <Path>
+        <Point X="25" Y="10.066" />
+        <Point X="23.25" Y="10.066" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAIAAAAAgAAAAAAAAAAAIBAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>UserAggregate\UserGroupMenu.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="UserGroup" />
+      <Property Name="Menu" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Heeelp.Core.Domain.UserGroupUser">
+    <Position X="18.75" Y="7.5" Width="1.5" />
+    <AssociationLine Name="UserGroup" Type="Heeelp.Core.Domain.UserGroup" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="20.25" Y="7.962" />
+        <Point X="22.062" Y="7.962" />
+        <Point X="22.062" Y="9" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAABEAAAAIAAAAAAAAAAAAgAAAAAAAAAAQAAAAAAAAQ=</HashCode>
+      <FileName>UserAggregate\UserGroupUser.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="UserGroup" />
+      <Property Name="User" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Heeelp.Core.Domain.UserHistory">
+    <Position X="9.5" Y="5.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAADKAAAACEQAgAEhAAQgAwAAiBAAAwgAQAABAYAEAE=</HashCode>
+      <FileName>UserAggregate\UserHistory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Heeelp.Core.Domain.UserModule">
+    <Position X="21.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABQAAAAAAAAAAAAAAAAAwgAAAAAAAgAAAACEAAAAQ=</HashCode>
+      <FileName>UserAggregate\UserModule.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="User" />
+      <Property Name="Module" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Heeelp.Core.Domain.UserPreference">
+    <Position X="17.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ARAFAAAAAAAQAgIhAQAAAAgACAAIgAJgESAAAgAAAAg=</HashCode>
+      <FileName>UserAggregate\UserPreference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Heeelp.Core.Domain.Module">
+    <Position X="25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAgAAIAAAAAAAA=</HashCode>
+      <FileName>SystemValuesAggregate\Module.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Heeelp.Core.Domain.Menu">
+    <Position X="28.25" Y="8.75" Width="1.5" />
+    <AssociationLine Name="Menu1" Type="Heeelp.Core.Domain.Menu" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="28.25" Y="9.043" />
+        <Point X="27.875" Y="9.043" />
+        <Point X="27.875" Y="8.375" />
+        <Point X="28.438" Y="8.375" />
+        <Point X="28.438" Y="8.75" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Menu2" Type="Heeelp.Core.Domain.Menu" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="29.562" Y="11.651" />
+        <Point X="29.562" Y="12.026" />
+        <Point X="30.125" Y="12.026" />
+        <Point X="30.125" Y="11.438" />
+        <Point X="29.75" Y="11.438" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>BACCAABIAAAQAAAAAAAAAAAAAAAABAQEAAAACAAAAAA=</HashCode>
+      <FileName>SystemValuesAggregate\Menu.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Menu2" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Menu1" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

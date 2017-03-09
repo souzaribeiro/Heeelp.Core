@@ -1,0 +1,78 @@
+﻿<div class="sub-header">
+    <h5>Incluir mensagem</h5>
+</div>
+<div class="progress">
+    <div class="progress-bar progress-bar-default" style="width:0%"></div>
+</div>
+
+<div class="well">
+    
+   <div class="form-group">
+       <label class="control-label">Grupo de mensagem</label>
+       <select class="form-control" id="ddlChannel" ng-model="Notification.CommunicationGroupId">
+        <option ng-repeat="option in CommunicationGroupList" value="{{option.CommunicationGroupId}}">{{option.Name}}</option>
+    </select>
+   </div>
+
+
+   <div class="form-group">
+       <label class="control-label">Código Mensagem:</label>
+       <input class="form-control" type="text" id="txtMessageCodeType" maxlength="15" ng-model="Notification.MessageCodeType" placeholder="Codigo Tipo de mensagem" /> 
+   </div>
+
+    <div class="form-group">
+       <label class="control-label">Nome Mensagem</label>
+       <input class="form-control" type="text" id="txtCommunicationTypeName" ng-model="Notification.Name" placeholder="Descrição" /> 
+   </div>
+
+   <div class="form-group">
+       <label class="control-label">Usuario pode desativar o recebimento?</label>
+       <select class="form-control" id="ddlChannel" ng-model="Notification.UserCanTurnOff">
+        <option  value="false"> Não</option>
+        <option  value="true"> Sim </option>
+    </select>
+   </div>
+
+
+   <div class="form-group">
+       <label class="control-label">Tentativas de envio</label>
+       <input class="form-control" type="text" id="txtSentAttempts" ng-model="Notification.SentAttempts" placeholder="Quantidade de tentativas de envio" /> 
+   </div>
+
+
+
+    <button ng-click="CreateCommunicationType(Notification)" class="btn btn-lg btn-fullwidth btn-primary">Cadastrar</button>
+</div>
+
+<div>
+   <!--  Incluir tipo de mensagem 
+    <br />
+    <br />
+    Grupo De Mensagem:
+    <select id="ddlChannel" ng-model="Notification.CommunicationGroupId">
+        <option ng-repeat="option in CommunicationGroupList" value="{{option.CommunicationGroupId}}">{{option.Name}}</option>
+    </select>
+
+    <br />
+    <br /> -->
+   <!--  Codigo Mensagem:
+    <input type="text" id="txtMessageCodeType" maxlength="15" ng-model="Notification.MessageCodeType" placeholder="Codigo Tipo de mensagem" /> 
+    <br />
+    <br /> -->
+   <!--  Nome Mensagem:
+    <input type="text" id="txtCommunicationTypeName" ng-model="Notification.Name" placeholder="Descrição" /> 
+    <br />
+    <br /> -->
+    <!-- Acao do usuario(Usuario pode desativar o recebimento?):
+    <select id="ddlChannel" ng-model="Notification.UserCanTurnOff">
+        <option  value="false"> Não</option>
+        <option  value="true"> Sim </option>
+    </select>
+    <br />
+    <br /> -->
+  <!--   Tentativas de envio:
+    <input type="text" id="txtSentAttempts" ng-model="Notification.SentAttempts" placeholder="nr tentantivas" /> 
+    <br />
+    <br /> -->
+
+</div> 

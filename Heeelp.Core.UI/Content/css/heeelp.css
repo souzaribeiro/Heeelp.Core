@@ -1,0 +1,24 @@
+header.navigation, .navbar-default,.offers__item--button, .offers__item--button, .login-submit, .deal-header--button, .hl-btn-primary   {
+	background:#16a55f;
+	color:#fff;
+	border:0;
+}
+
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover, .offers__item--newprice:before, .offers__item--patrocinado:before, .hl-navbar-nav, .login-submit:hover, .hl-btn-primary:hover {
+	background-color:#299646;
+}
+
+.navbar-default .navbar-nav>li>a {
+	color:#fff;
+}
+
+
+.hl-navbar-nav--text {
+  color:#b2dcdc;
+}
+
+
+
+.nav > li:hover {
+	color:#13a1a2;
+}

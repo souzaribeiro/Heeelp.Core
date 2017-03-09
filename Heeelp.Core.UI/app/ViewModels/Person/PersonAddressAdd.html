@@ -1,0 +1,49 @@
+﻿
+<div>
+    Incluir Person
+    <br />
+    <br />
+    Person:
+    <select name="repeatSelect" id="repeatSelect" ng-model="Person.PersonIntegrationId">
+        <option ng-repeat="option in PersonIntegrationList" value="{{option.PersonIntegrationId}}">{{option.Name}}</option>
+    </select>
+    <br />
+    <br />
+    Person StreetName:
+    <input type="text" id="txtPersonStreetName" ng-model="Person.StreetName" placeholder="Digite endereço" />
+    <br />
+    <br />
+    Person Number:
+    <input type="text" id="txtPersonNumber" ng-model="Person.Number" placeholder="Digite o numero" />
+    <br />
+    <br />
+    Person State:
+    <input type="text" id="txtPersonState" ng-model="Person.State" placeholder="Digite estado"/>
+    <br />
+    <br />
+    Person City:
+    <input type="text" id="txtPersonCity" ng-model="Person.City" placeholder="Digite a Cidade" />
+    <br />
+    <br />
+    Person Country:
+    <input type="text" id="txtPersonCountry" ng-model="Person.Country" placeholder="Digite a País"/>
+    <br />
+    <br />
+   
+   
+    Person ContactPhoneNumber:
+    <input type="text" id="txtPersonContactPhoneNumber" ng-model="Person.ContactPhoneNumber" placeholder="Telefone" />
+    <br />
+    <br />
+    Person ContactEMail:
+    <input type="text" id="txtPersonContactEMail" ng-model="Person.ContactEMail" placeholder="Email" />
+    <br />
+    <br />
+   
+   
+
+    
+    <button ng-click="sendPerson(Person)">Cadastrar</button>
+</div>
+<br />
+<br />

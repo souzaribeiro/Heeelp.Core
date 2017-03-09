@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Heeelp.Core.Domain.Expertise">
+    <Position X="4.25" Y="2" Width="2" />
+    <AssociationLine Name="Expertise1" Type="Heeelp.Core.Domain.Expertise" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.25" Y="2.239" />
+        <Point X="3.875" Y="2.239" />
+        <Point X="3.875" Y="1.385" />
+        <Point X="4.938" Y="1.385" />
+        <Point X="4.938" Y="2" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAABEEkIQAAAAgAAIAHAEASAAAAAAAEgAAAAIAAAAAE=</HashCode>
+      <FileName>ExpertiseAggregate\Expertise.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ApprovalStatus" />
+      <Property Name="User" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Expertise1" />
+      <Property Name="ExpertisePhoto" />
+      <Property Name="PersonExpertise" />
+      <Property Name="PersonInterest" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Heeelp.Core.Domain.ApprovalStatus">
+    <Position X="1.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAQAAAAAAAAgAAAAAQAAAAA=</HashCode>
+      <FileName>SystemValuesAggregate\ApprovalStatus.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Heeelp.Core.Domain.PersonExpertise">
+    <Position X="10.25" Y="1.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AIABDEgAAAAAAAAECAAAAAAAAAAAAoAwAAAAAQAAAAE=</HashCode>
+      <FileName>PersonAggregate\PersonExpertise.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Heeelp.Core.Domain.PersonInterest">
+    <Position X="10.25" Y="5.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AIABSEgAAAABAAAEAAAAAAAAAAAAAoAgAAAAAQAAAAA=</HashCode>
+      <FileName>PersonAggregate\PersonInterest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Heeelp.Core.Domain.ExpertisePhoto">
+    <Position X="0.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQgAAAAAAAAAAAAAAAAAAAAAAAAAACAAAQIAAAA=</HashCode>
+      <FileName>ExpertiseAggregate\ExpertisePhoto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Heeelp.Core.Domain.User">
+    <Position X="3" Y="7.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AIACKAAASCEYAgAkpACQkAwAAiRAAJwgAQIAKQYCEAE=</HashCode>
+      <FileName>UserAggregate\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

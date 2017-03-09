@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2B8B68E3-972C-4725-B2D0-D57B248F0449}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Heeelp.Core.Command</RootNamespace>
+    <AssemblyName>Heeelp.Core.Command</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Laboratorio|AnyCPU'">
+    <OutputPath>bin\Laboratorio\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Homol|AnyCPU'">
+    <OutputPath>bin\Homol\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommandBase.cs" />
+    <Compile Include="Expertise\AddExpertisePhotoCommand.cs" />
+    <Compile Include="Expertise\AddExpertiseCommand.cs" />
+    <Compile Include="Expertise\DeleteExpertise.cs" />
+    <Compile Include="Expertise\UpdateExpertise.cs" />
+    <Compile Include="ExternalMoules\Promotion\DeletedPromotionCommand.cs" />
+    <Compile Include="ExternalMoules\Promotion\AddAwardPromotionCommand.cs" />
+    <Compile Include="ExternalMoules\Promotion\AddGiftPromotionCommand.cs" />
+    <Compile Include="ExternalMoules\Promotion\AddDscountPromotionCommand.cs" />
+    <Compile Include="ExternalMoules\Promotion\TransactCouponCommand.cs" />
+    <Compile Include="ExternalMoules\Marketing\MarketingProspectCommand.cs" />
+    <Compile Include="ExternalMoules\Promotion\CancelCouponCommand.cs" />
+    <Compile Include="Location\AddCityZoneCommand.cs" />
+    <Compile Include="Location\AddCountryCommand.cs" />
+    <Compile Include="Location\AddCountryRegionCommand.cs" />
+    <Compile Include="Location\AddNeighbourhoodCommand.cs" />
+    <Compile Include="Location\AddStateCommand.cs" />
+    <Compile Include="Location\AddStateRegionCommand.cs" />
+    <Compile Include="Location\AddCityCommand.cs" />
+    <Compile Include="Person\AddCompanyInformationCommand.cs" />
+    <Compile Include="Person\AdminSyncAllPersonsCommand.cs" />
+    <Compile Include="ExternalMoules\Notification\SendExternalNotificationCommand.cs" />
+    <Compile Include="User\AddSelfRegistrationCommand.cs" />
+    <Compile Include="User\AddUserInvitedCommand.cs" />
+    <Compile Include="User\AdminSyncAllUsersCommand.cs" />
+    <Compile Include="Person\AddPersonCommand.cs" />
+    <Compile Include="Person\UpdatePersonStatusCommand.cs" />
+    <Compile Include="Person\SyncPersonInfoCommand.cs" />
+    <Compile Include="Person\AddPersonCoworkingCommand.cs" />
+    <Compile Include="Person\AddPersonRulesCommand.cs" />
+    <Compile Include="Person\AddPersonEmployeeCommand.cs" />
+    <Compile Include="Person\AddPersonServiceProviderCommand.cs" />
+    <Compile Include="Person\InactivePersonCoWorkerCommand.cs" />
+    <Compile Include="Person\AddPersonCompanyPartnerCommand.cs" />
+    <Compile Include="Person\UpdatePersonAddressCompleteRegistrationCommand.cs" />
+    <Compile Include="Person\AddPersonContractCommand.cs" />
+    <Compile Include="Person\AddPersonDocumentNoFileCommand.cs" />
+    <Compile Include="Person\AddPersonDocumentCommand.cs" />
+    <Compile Include="Person\AddPersonExpertiseCommand.cs" />
+    <Compile Include="Person\AddPersonFinanceAddress.cs" />
+    <Compile Include="Person\AddPersonServiceAddress.cs" />
+    <Compile Include="Person\ApprovePersonExpertise.cs" />
+    <Compile Include="Person\ApprovePersonInterest.cs" />
+    <Compile Include="Person\BlockPerson.cs" />
+    <Compile Include="Person\AddPersonCompanyExpertiseCommand.cs" />
+    <Compile Include="Person\DeletePerson.cs" />
+    <Compile Include="Person\DeletePersonAddress.cs" />
+    <Compile Include="Person\DeletePersonDocument.cs" />
+    <Compile Include="Person\RemovePersonExpertise.cs" />
+    <Compile Include="Person\RemovePersonInterest.cs" />
+    <Compile Include="Person\UpdatePersonCompanyCommand.cs" />
+    <Compile Include="Person\UpdatePersonContract.cs" />
+    <Compile Include="Person\UpdatePersonDocument.cs" />
+    <Compile Include="Person\UpdatePersonFinanceAddress.cs" />
+    <Compile Include="Person\UpdatePersonGeneralInfo.cs" />
+    <Compile Include="Person\UpdatePersonLogo.cs" />
+    <Compile Include="Person\UpdatePersonProfessionalContactInfo.cs" />
+    <Compile Include="Person\UpdatePersonProfessionalDescriptionInfo.cs" />
+    <Compile Include="Person\UpdatePersonProfessionalHistoryInfo.cs" />
+    <Compile Include="Person\UpdatePersonProfessionalServicesInfo.cs" />
+    <Compile Include="Person\UpdatePersonProfessionalSocialInfo.cs" />
+    <Compile Include="Person\UpdatePersonServiceAddress.cs" />
+    <Compile Include="Person\UploadLogoPersonCommand.cs" />
+    <Compile Include="Person\UploadFilePersonCommand.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegisterPromotion\AddPromotionProspecCommand.cs" />
+    <Compile Include="User\AddContractCommand.cs" />
+    <Compile Include="User\AddAuthProviderFacebook.cs" />
+    <Compile Include="User\AddAuthProviderGoogle.cs" />
+    <Compile Include="User\AddAuthProviderHeeelp.cs" />
+    <Compile Include="Person\AddPersonInterestCommand.cs" />
+    <Compile Include="Person\AddPersonHistoricCommand.cs" />
+    <Compile Include="Person\AddPersonFileCommand.cs" />
+    <Compile Include="Person\AddPersonAddressCommand.cs" />
+    <Compile Include="User\ChangeUserPasswordCommand.cs" />
+    <Compile Include="User\ForgotPasswordUserCommand.cs" />
+    <Compile Include="User\UpdateUserByPersonIntegrationCodeCommand.cs" />
+    <Compile Include="User\UploadPhotoUserCommand.cs" />
+    <Compile Include="Person\SendWelcomeMessageCommand.cs" />
+    <Compile Include="User\SyncUserInfoCommand.cs" />
+    <Compile Include="User\CreateActivationRequestCommand.cs" />
+    <Compile Include="User\InactiveEmployeeCommand.cs" />
+    <Compile Include="User\ActivateUserCommand.cs" />
+    <Compile Include="User\UpdateUserStatusCommand.cs" />
+    <Compile Include="User\UpdateUserCommand.cs" />
+    <Compile Include="User\AddUserProspectCommand.cs" />
+    <Compile Include="User\AddUserPreferenceCommand.cs" />
+    <Compile Include="User\AddUserModuleCommand.cs" />
+    <Compile Include="User\AddUserGroupUserCommand.cs" />
+    <Compile Include="User\AddUserGroupMenuCommand.cs" />
+    <Compile Include="User\AddUserGroupCommand.cs" />
+    <Compile Include="User\AddUserFileCommand.cs" />
+    <Compile Include="User\BlockUserCommand.cs" />
+    <Compile Include="User\ChangeUserAuthModeCommand.cs" />
+    <Compile Include="User\ChangeUserPhotoCommand.cs" />
+    <Compile Include="User\AddUserCommand.cs" />
+    <Compile Include="User\DeleteUser.cs" />
+    <Compile Include="User\RememberPassword.cs" />
+    <Compile Include="User\SetUserManagerProfile.cs" />
+    <Compile Include="User\SetUserOperatorProfile.cs" />
+    <Compile Include="User\UpdateUserPreferences.cs" />
+    <Compile Include="User\ValidateUserCaptcha.cs" />
+    <Compile Include="User\ValidateUserEnrollmentEmail.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Page\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Heeelp.Core.Common\Heeelp.Core.Common.csproj">
+      <Project>{baf088f8-3fcb-45ef-a228-6424c34c65ca}</Project>
+      <Name>Heeelp.Core.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Heeelp.Core.Domain.ReadModel\Heeelp.Core.Domain.ReadModel.csproj">
+      <Project>{3526ae7a-d276-4c89-a6d8-85a04453eb10}</Project>
+      <Name>Heeelp.Core.Domain.ReadModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Heeelp.Core.Domain\Heeelp.Core.Domain.csproj">
+      <Project>{25091993-eb42-445f-928a-a3775e5df15e}</Project>
+      <Name>Heeelp.Core.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure\Heeelp.Core.Infrastructure.csproj">
+      <Project>{b5786d07-5888-4df5-b295-3fea593f3bfe}</Project>
+      <Name>Heeelp.Core.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

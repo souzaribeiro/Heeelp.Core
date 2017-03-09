@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Heeelp.Core.Domain.Person">
+    <Position X="14.5" Y="2" Width="2.25" />
+    <AssociationLine Name="Currency" Type="Heeelp.Core.Domain.Currency" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="14.5" Y="2.059" />
+        <Point X="14.125" Y="2.059" />
+        <Point X="14.125" Y="1.531" />
+        <Point X="13.75" Y="1.531" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>hUARKAAgCgRIABAGIAAEUAQECoIUAJAkAAAAICQAAQI=</HashCode>
+      <FileName>PersonAggregate\Person.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Country" />
+      <Property Name="Language" />
+      <Property Name="Currency" />
+      <Property Name="PersonProfile" />
+      <Property Name="PersonStatus" />
+      <Property Name="PersonType" />
+      <Property Name="SecuritySource" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="PersonHistoric" />
+      <Property Name="PersonExpertise" />
+      <Property Name="PersonInterest" />
+      <Property Name="PersonDocument" />
+      <Property Name="PersonAddress" />
+      <Property Name="PersonContract" />
+      <Property Name="PersonFile" />
+      <Property Name="User" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Heeelp.Core.Domain.PersonAddress">
+    <Position X="9.5" Y="6.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AIIBCAACAAAAAACEAEAAAAAEIAQABAAgAAAAgAQCAEE=</HashCode>
+      <FileName>PersonAggregate\PersonAddress.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Heeelp.Core.Domain.PersonContract">
+    <Position X="19.75" Y="0.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AICAAAAAAAAAABAEAAAAAAgAAAAAAAIgEAAIAAAAAAA=</HashCode>
+      <FileName>PersonAggregate\PersonContract.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Heeelp.Core.Domain.PersonDocument">
+    <Position X="9.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAABAQACAoEBEAAAAAAAAAAAgAgAAAAAAIAAAA=</HashCode>
+      <FileName>PersonAggregate\PersonDocument.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Heeelp.Core.Domain.PersonExpertise">
+    <Position X="19.25" Y="3.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AIABDEgAAAAAAAAECAAAAAAAAAAAAoAwAAAAAQAAAAE=</HashCode>
+      <FileName>PersonAggregate\PersonExpertise.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Heeelp.Core.Domain.PersonFile">
+    <Position X="9.5" Y="4" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AIABAgAAAAAAAAAEAAAAIAAAAAAAAAAgAAABAAIAAAA=</HashCode>
+      <FileName>PersonAggregate\PersonFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Heeelp.Core.Domain.PersonHistoric">
+    <Position X="14.25" Y="10.25" Width="2.5" />
+    <AssociationLine Name="Person" Type="Heeelp.Core.Domain.Person" FixedToPoint="true">
+      <Path>
+        <Point X="14.938" Y="10.25" />
+        <Point X="14.938" Y="9.132" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>BMAQKAAiAgRIABAGAAAEQAQAAgAQAIAkAAAAAAQAAQA=</HashCode>
+      <FileName>PersonAggregate\PersonHistoric.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Person" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Heeelp.Core.Domain.PersonInterest">
+    <Position X="21.75" Y="5.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AIABSEgAAAABAAAEAAAAAAAAAAAAAoAgAAAAAQAAAAA=</HashCode>
+      <FileName>PersonAggregate\PersonInterest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Heeelp.Core.Domain.Country">
+    <Position X="12" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAACwAAAAAAAAAgAAQAAgAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LocationAggregate\Country.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Heeelp.Core.Domain.Language" Collapsed="true">
+    <Position X="12" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIABAAAAAAAAAQAAAAAAAAQAAgIAAAAgAAAAAAAAAAg=</HashCode>
+      <FileName>SystemValuesAggregate\Language.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Heeelp.Core.Domain.Currency" Collapsed="true">
+    <Position X="12.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAgAAAAAAAAAAAAQAAAAAAAAgAAAAAAAACAA=</HashCode>
+      <FileName>SystemValuesAggregate\Currency.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Heeelp.Core.Domain.PersonProfile">
+    <Position X="18" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAQAAAAAAAAAAAQAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>SystemValuesAggregate\PersonProfile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Heeelp.Core.Domain.PersonStatus" Collapsed="true">
+    <Position X="14" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAABAAAAAAAAAAAQAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>SystemValuesAggregate\PersonStatus.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Heeelp.Core.Domain.PersonType" Collapsed="true">
+    <Position X="15.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AMAAAAAAAAAAAAAAAAAAAAQAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>SystemValuesAggregate\PersonType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Heeelp.Core.Domain.SecuritySource" Collapsed="true">
+    <Position X="12" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAQAAAAAAAAkAAAAAAAAAAA=</HashCode>
+      <FileName>SystemValuesAggregate\SecuritySource.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Heeelp.Core.Domain.User">
+    <Position X="19" Y="8.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AIACKAAASCEYAgAkpACQkAwAAiRAAJwgAQIAKQYCEAE=</HashCode>
+      <FileName>UserAggregate\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

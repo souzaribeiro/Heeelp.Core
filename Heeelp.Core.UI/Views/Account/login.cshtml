@@ -1,0 +1,102 @@
+﻿@model Heeelp.Core.UI.Models.LoginViewModel
+@{
+
+    ViewBag.Title = "Heeelp! Facilitador";
+}
+@using (Html.BeginForm("Logon", "Account", Model, FormMethod.Post))
+{
+    <title>Heeelp! Facilitador</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="stylesheet" type="text/css" href="../../Content/css/login.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+
+<div id="signin">
+
+    <div class="form-title">
+        <img src="../../images/logo-heeelp-white.png" alt="Heeelp!" width="150" /><br /><br />
+    Heeelp! Facilitador
+    </div>
+
+    <div class="editor-label">
+        @ViewBag.MsgError
+       
+ 
+    </div>
+
+    <div class="input-field">
+        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @id = "email" } })
+        <i class="material-icons">email</i>
+        <label for="email">E-mail</label>
+        @Html.ValidationMessageFor(model => model.Email)
+    </div>
+    <div class="input-field">
+        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @id = "password" } })
+        <i class="material-icons">lock</i>
+        <label for="password">Senha</label>
+        @Html.ValidationMessageFor(model => model.Password)
+    </div>
+    @*<a href="" class="forgot-pw">Esqueci minha senha</a>*@
+    <button type="submit" class="login hide">Entrar</button>
+    <div class="check">
+        <i class="material-icons">check</i>
+    </div>
+</div>
+
+
+<div style="display:none">
+
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Email)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Email)
+        @Html.ValidationMessageFor(model => model.Email)
+    </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Password)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Password)
+            @Html.ValidationMessageFor(model => model.Password)
+        </div>
+        <p>
+            <input type="submit" value="Submit" />
+        </p>
+
+        <div class="editor-label">
+            @ViewBag.MsgError
+        </div>
+</div>
+}
+
+<script src="../../Scripts/jquery-1.10.2.min.js"></script>
+<script>
+    $('#password').on('keyup', function () {
+        $("button.login").fadeIn();
+    });
+
+
+    $("input").on('focusout', function () {
+        $(this).each(function (i, e) {
+            if ($(e).val() != "") {
+                $(e).addClass('not-empty');
+            } else {
+                $(e).removeClass('not-empty');
+            }
+        });
+    });
+
+    $(".login").on('click', function () {
+        $(this).animate({
+            fontSize: 0
+        }, 300, function () {
+            $(".check").addClass('in');
+        });
+    });
+</script>

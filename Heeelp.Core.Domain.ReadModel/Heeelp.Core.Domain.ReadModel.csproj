@@ -1,0 +1,335 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3526AE7A-D276-4C89-A6D8-85A04453EB10}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Heeelp.Core.Domain.ReadModel</RootNamespace>
+    <AssemblyName>Heeelp.Core.Domain.ReadModel</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Laboratorio|AnyCPU'">
+    <OutputPath>bin\Laboratorio\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Homol|AnyCPU'">
+    <OutputPath>bin\Homol\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FluentValidation, Version=6.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.6.2.1.0\lib\Net45\FluentValidation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dao\CityDao.cs" />
+    <Compile Include="Dao\PersonAddressDao.cs" />
+    <Compile Include="Dao\PersonContractDao.cs" />
+    <Compile Include="Dao\ContractDao.cs" />
+    <Compile Include="Dao\PersonExpertiseDao.cs" />
+    <Compile Include="Dao\PersonSkinDao.cs" />
+    <Compile Include="Dao\StateDao.cs" />
+    <Compile Include="Dao\NeighbourhoodDao.cs" />
+    <Compile Include="Dao\FileTempDao.cs" />
+    <Compile Include="Dao\AutenticationUserDao.cs" />
+    <Compile Include="Dao\UserProfileDao.cs" />
+    <Compile Include="Dao\UserStatusDao.cs" />
+    <Compile Include="Dao\UserDao.cs" />
+    <Compile Include="Dao\SecuritySourceDao.cs" />
+    <Compile Include="Dao\CountryDao.cs" />
+    <Compile Include="Dao\CurrencyDao.cs" />
+    <Compile Include="Dao\ServerInstanceDao.cs" />
+    <Compile Include="Dao\PersonStatusDao.cs" />
+    <Compile Include="Dao\PersonProfileDao.cs" />
+    <Compile Include="Dao\PersonOriginTypeDao.cs" />
+    <Compile Include="Dao\PersonTypeDao.cs" />
+    <Compile Include="Dao\PersonDao.cs" />
+    <Compile Include="Dao\LanguageDao.cs" />
+    <Compile Include="Dao\ExpertiseDao.cs" />
+    <Compile Include="DTO\ApprovePromotionInputDTO.cs" />
+    <Compile Include="DTO\CompanyDetailsDTO.cs" />
+    <Compile Include="DTO\ExternalModules\BaseResponseDTO.cs" />
+    <Compile Include="DTO\ExternalModules\Notification\GetLastestNotificationsInputDTO.cs" />
+    <Compile Include="DTO\ExternalModules\Notification\ListNotificationsInputDTO.cs" />
+    <Compile Include="DTO\ExternalModules\Notification\PersonCommunicationDTO.cs" />
+    <Compile Include="DTO\ExternalModules\Notification\PersonCommunicationListDTO.cs" />
+    <Compile Include="DTO\ExternalModules\Notification\SetAllNotificationsViewedInputDTO.cs" />
+    <Compile Include="DTO\ExternalModules\Promotion\CouponIssuedOutputDTO.cs" />
+    <Compile Include="DTO\ExternalModules\TokenDTO.cs" />
+    <Compile Include="DTO\MyCouponsDTO.cs" />
+    <Compile Include="DTO\PromotionBillingModelOutputDTO.cs" />
+    <Compile Include="DTO\PromotionClassifiedDTO.cs" />
+    <Compile Include="DTO\PromotionClassifiedListDTO.cs" />
+    <Compile Include="DTO\PromotionDeletedDTO.cs" />
+    <Compile Include="DTO\PromotionPaymentTypeOutputDTO.cs" />
+    <Compile Include="DTO\PromotionRecurrenceOutputDTO.cs" />
+    <Compile Include="DTO\PromotionTypeOutputDTO.cs" />
+    <Compile Include="DTO\RefusedPromotionInputDTO.cs" />
+    <Compile Include="DTO\AddUserSessionDto.cs" />
+    <Compile Include="DTO\CompanyExpertiseDTO.cs" />
+    <Compile Include="DTO\CompanyCoworkerOutDTO.cs" />
+    <Compile Include="DTO\CompanyReturnDTO.cs" />
+    <Compile Include="DTO\ContractListDTO.cs" />
+    <Compile Include="DTO\ExternalModules\Promotion\CancelCouponDto.cs" />
+    <Compile Include="DTO\ExternalModules\Promotion\EditPromotionAwardInputDTO.cs" />
+    <Compile Include="DTO\ExternalModules\Promotion\EditPromotionDiscountInputDTO.cs" />
+    <Compile Include="DTO\ExternalModules\Promotion\EditPromotionGiftInputDTO.cs" />
+    <Compile Include="DTO\ExternalModules\Promotion\IssueCouponInputDto.cs" />
+    <Compile Include="DTO\ExternalModules\Promotion\TransactCouponDto.cs" />
+    <Compile Include="DTO\ExtractOutputDTO.cs" />
+    <Compile Include="DTO\ExtractDTO.cs" />
+    <Compile Include="DTO\ExternalModules\Notification\ExternalNotificationDTO.cs" />
+    <Compile Include="DTO\PersonSyncSocialDTO.cs" />
+    <Compile Include="DTO\ExternalModules\Promotion\PromotionAwardInputDTO.cs" />
+    <Compile Include="DTO\ExternalModules\Promotion\PromotionDetailsInputDTO.cs" />
+    <Compile Include="DTO\ExternalModules\Promotion\PromotionDiscountInputDTO.cs" />
+    <Compile Include="DTO\PromotionDto.cs" />
+    <Compile Include="DTO\PromotionGiftInputDTO.cs" />
+    <Compile Include="DTO\PromotionListDto.cs" />
+    <Compile Include="DTO\PromotionPhotoInputDTO.cs" />
+    <Compile Include="DTO\ExternalModules\Notification\SendNotificationInputDTO.cs" />
+    <Compile Include="DTO\SkinDomainDTO.cs" />
+    <Compile Include="DTO\PersonBenefitClubDTO.cs" />
+    <Compile Include="DTO\EmployeeInDTO.cs" />
+    <Compile Include="DTO\EmployeeReturnDTO.cs" />
+    <Compile Include="DTO\PhotoLogoDTO.cs" />
+    <Compile Include="DTO\FileTempDTO.cs" />
+    <Compile Include="DTO\UserHashDTO.cs" />
+    <Compile Include="DTO\UserInvitedDTO.cs" />
+    <Compile Include="DTO\UserPerfilDTO.cs" />
+    <Compile Include="DTO\MarketingProspectDTO.cs" />
+    <Compile Include="DTO\CompanyDTO.cs" />
+    <Compile Include="DTO\DeleteCompanyDTO.cs" />
+    <Compile Include="DTO\NewCompanyIntegrationInputDTO.cs" />
+    <Compile Include="DTO\PasswordDTO.cs" />
+    <Compile Include="DTO\CompanyInformationDTO.cs" />
+    <Compile Include="DTO\PersonSkinDTO.cs" />
+    <Compile Include="DTO\PersonDTO.cs" />
+    <Compile Include="DTO\UserFirstAccessDTO.cs" />
+    <Compile Include="DTO\TemporaryAccessdDTO.cs" />
+    <Compile Include="DTO\EmployeeActivationDTO.cs" />
+    <Compile Include="DTO\NotificationDTO.cs" />
+    <Compile Include="DTO\PersonSyncDTO.cs" />
+    <Compile Include="DTO\PersonFileDTO.cs" />
+    <Compile Include="DTO\PersonContractDTO.cs" />
+    <Compile Include="DTO\NewCompanyDTO.cs" />
+    <Compile Include="DTO\AssociateCompanyUserDTO.cs" />
+    <Compile Include="DTO\EmployeeDTO.cs" />
+    <Compile Include="DTO\NewEmployeeDTO.cs" />
+    <Compile Include="DTO\NewCoworkingDTO.cs" />
+    <Compile Include="DTO\PersonAddressProspectDTO.cs" />
+    <Compile Include="DTO\PersonCoworkerUpdateDTO.cs" />
+    <Compile Include="DTO\PersonDetailsDTO.cs" />
+    <Compile Include="DTO\PersonExpertiseListDTO.cs" />
+    <Compile Include="DTO\CompanyCoworkerDTO.cs" />
+    <Compile Include="DTO\UserFullInfoDTO.cs" />
+    <Compile Include="DTO\UserSyncDTO.cs" />
+    <Compile Include="DTO\UserListAssociateDTO.cs" />
+    <Compile Include="DTO\UserListDeleteDTO.cs" />
+    <Compile Include="DTO\UserUpdateDTO.cs" />
+    <Compile Include="DTO\UserAddDTO.cs" />
+    <Compile Include="DTO\CityDTO.cs" />
+    <Compile Include="DTO\FIleUrlDTO.cs" />
+    <Compile Include="DTO\ExpertisePhotoDTO.cs" />
+    <Compile Include="DTO\ExpertisePersonDTO.cs" />
+    <Compile Include="DTO\PersonAddressDTO.cs" />
+    <Compile Include="DTO\PersonAddressClassifiedDTO.cs" />
+    <Compile Include="DTO\PersonClassifiedDTO.cs" />
+    <Compile Include="DTO\PersonAddDTO.cs" />
+    <Compile Include="DTO\StateDTO.cs" />
+    <Compile Include="DTO\NeighbourhoodDTO.cs" />
+    <Compile Include="DTO\CountryDTO.cs" />
+    <Compile Include="DTO\CurrencyDTO.cs" />
+    <Compile Include="DTO\ExpertiseDTO.cs" />
+    <Compile Include="DTO\FileTempListDTO.cs" />
+    <Compile Include="DTO\AutenticationUserDTO.cs" />
+    <Compile Include="DTO\UserProfileListDTO.cs" />
+    <Compile Include="DTO\UserStatusListDTO.cs" />
+    <Compile Include="DTO\UserListDTO.cs" />
+    <Compile Include="DTO\SecuritySourceListDTO.cs" />
+    <Compile Include="DTO\ServerInstanceListDTO.cs" />
+    <Compile Include="DTO\CurrencyListDTO.cs" />
+    <Compile Include="DTO\CountryListDTO.cs" />
+    <Compile Include="DTO\PersonOriginTypeListDTO.cs" />
+    <Compile Include="DTO\PersonTypeListDTO.cs" />
+    <Compile Include="DTO\PersonProfileListDTO.cs" />
+    <Compile Include="DTO\PersonStatusListDTO.cs" />
+    <Compile Include="DTO\PersonListDTO.cs" />
+    <Compile Include="DTO\LanguageListDTO.cs" />
+    <Compile Include="DTO\ExpertiseListDTO.cs" />
+    <Compile Include="DTO\Validation\ErrorModel.cs" />
+    <Compile Include="DTO\Validation\ErrorsModel.cs" />
+    <Compile Include="DTO\Validation\ErrorState.cs" />
+    <Compile Include="HeeelpReadDataContext.cs" />
+    <Compile Include="Interfaces\ICityDao.cs" />
+    <Compile Include="Interfaces\IPersonAddressDao.cs" />
+    <Compile Include="Interfaces\IPersonContractDao.cs" />
+    <Compile Include="Interfaces\IContractDao.cs" />
+    <Compile Include="Interfaces\IPersonExpertiseDao.cs" />
+    <Compile Include="Interfaces\IPersonSkinDao.cs" />
+    <Compile Include="Interfaces\IStateDao.cs" />
+    <Compile Include="Interfaces\INeighbourhoodDao.cs" />
+    <Compile Include="Interfaces\IFileTempDao.cs" />
+    <Compile Include="Interfaces\IAutenticationUserDao.cs" />
+    <Compile Include="Interfaces\IUserProfileDao.cs" />
+    <Compile Include="Interfaces\IUserStatusDao.cs" />
+    <Compile Include="Interfaces\IUserDao.cs" />
+    <Compile Include="Interfaces\ISecuritySourceDao.cs" />
+    <Compile Include="Interfaces\IServerInstanceDao.cs" />
+    <Compile Include="Interfaces\ICurrencyDao.cs" />
+    <Compile Include="Interfaces\ICountryDao.cs" />
+    <Compile Include="Interfaces\IPersonProfileDao.cs" />
+    <Compile Include="Interfaces\IPersonStatusDao.cs" />
+    <Compile Include="Interfaces\IPersonOriginTypeDao.cs" />
+    <Compile Include="Interfaces\IPersonTypeDao.cs" />
+    <Compile Include="Interfaces\IPersonDao.cs" />
+    <Compile Include="Interfaces\ILanguageDao.cs" />
+    <Compile Include="Interfaces\IExpertiseDao.cs" />
+    <Compile Include="Interfaces\IReadBase.cs" />
+    <Compile Include="Model\AddressType.cs" />
+    <Compile Include="Model\AdminUser.cs" />
+    <Compile Include="Model\ApprovalStatus.cs" />
+    <Compile Include="Model\City.cs" />
+    <Compile Include="Model\CityZone.cs" />
+    <Compile Include="Model\Class1.cs" />
+    <Compile Include="Model\CommandOrigin.cs" />
+    <Compile Include="Model\CommandQuee.cs" />
+    <Compile Include="Model\Commands.cs" />
+    <Compile Include="Model\CommandStatus.cs" />
+    <Compile Include="Model\CommandType.cs" />
+    <Compile Include="Model\CommandWorkFlow.cs" />
+    <Compile Include="Model\Contract.cs" />
+    <Compile Include="Model\ContractType.cs" />
+    <Compile Include="Model\Country.cs" />
+    <Compile Include="Model\CountryRegion.cs" />
+    <Compile Include="Model\CouponEstatisticMode.cs" />
+    <Compile Include="Model\CouponPeriodMode.cs" />
+    <Compile Include="Model\Currency.cs" />
+    <Compile Include="Model\C__MigrationHistory.cs" />
+    <Compile Include="Model\DocumentType.cs" />
+    <Compile Include="Model\EventQuee.cs" />
+    <Compile Include="Model\Events.cs" />
+    <Compile Include="Model\Events1.cs" />
+    <Compile Include="Model\EventStatus.cs" />
+    <Compile Include="Model\EventType.cs" />
+    <Compile Include="Model\EventWorkflow.cs" />
+    <Compile Include="Model\Expertise.cs" />
+    <Compile Include="Model\ExpertiseHistory.cs" />
+    <Compile Include="Model\ExpertisePhoto.cs" />
+    <Compile Include="Model\FileTemp.cs" />
+    <Compile Include="Model\Language.cs" />
+    <Compile Include="Model\Menu.cs" />
+    <Compile Include="Model\Messages.cs" />
+    <Compile Include="Model\Module.cs" />
+    <Compile Include="Model\Neighbourhood.cs" />
+    <Compile Include="Model\Page.cs" />
+    <Compile Include="Model\PageType.cs" />
+    <Compile Include="Model\PersonBenefitClub.cs" />
+    <Compile Include="Model\Skin.cs" />
+    <Compile Include="Model\Person.cs" />
+    <Compile Include="Model\PersonAddress.cs" />
+    <Compile Include="Model\PersonContract.cs" />
+    <Compile Include="Model\PersonDocument.cs" />
+    <Compile Include="Model\PersonExpertise.cs" />
+    <Compile Include="Model\PersonFile.cs" />
+    <Compile Include="Model\PersonHistoric.cs" />
+    <Compile Include="Model\PersonInterest.cs" />
+    <Compile Include="Model\PersonOriginType.cs" />
+    <Compile Include="Model\PersonProfile.cs" />
+    <Compile Include="Model\PersonRules.cs" />
+    <Compile Include="Model\PersonStatus.cs" />
+    <Compile Include="Model\PersonType.cs" />
+    <Compile Include="Model\Authentication.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Model\SecuritySource.cs" />
+    <Compile Include="Model\ServerInstance.cs" />
+    <Compile Include="Model\State.cs" />
+    <Compile Include="Model\StateRegion.cs" />
+    <Compile Include="Model\sysdiagrams.cs" />
+    <Compile Include="Model\SystemParameter.cs" />
+    <Compile Include="Model\User.cs" />
+    <Compile Include="Model\UserFile.cs" />
+    <Compile Include="Model\UserGroup.cs" />
+    <Compile Include="Model\UserGroupMenu.cs" />
+    <Compile Include="Model\UserGroupUser.cs" />
+    <Compile Include="Model\UserHistory.cs" />
+    <Compile Include="Model\UserModule.cs" />
+    <Compile Include="Model\UserPreference.cs" />
+    <Compile Include="Model\UserProfile.cs" />
+    <Compile Include="Model\UserStatus.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Heeelp.Core.Common\Heeelp.Core.Common.csproj">
+      <Project>{baf088f8-3fcb-45ef-a228-6424c34c65ca}</Project>
+      <Name>Heeelp.Core.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Heeelp.Core.Domain\Heeelp.Core.Domain.csproj">
+      <Project>{25091993-eb42-445f-928a-a3775e5df15e}</Project>
+      <Name>Heeelp.Core.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

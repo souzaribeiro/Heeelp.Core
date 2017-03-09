@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Heeelp.Core.Domain.Neighbourhood">
+    <Position X="4" Y="8.75" Width="2.25" />
+    <AssociationLine Name="Neighbourhood1" Type="Heeelp.Core.Domain.Neighbourhood" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6" Y="12.036" />
+        <Point X="6" Y="12.192" />
+        <Point X="6.875" Y="12.192" />
+        <Point X="6.875" Y="11.875" />
+        <Point X="6.25" Y="11.875" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Neighbourhood2" Type="Heeelp.Core.Domain.Neighbourhood" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4" Y="9.125" />
+        <Point X="3.625" Y="9.125" />
+        <Point X="3.625" Y="8.375" />
+        <Point X="4.938" Y="8.375" />
+        <Point X="4.938" Y="8.75" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAIAAAABAAQEIAAAABAgAFAAwAAAAAQ=</HashCode>
+      <FileName>LocationAggregate\Neighbourhood.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CityZone" />
+      <Property Name="Neighbourhood2" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Neighbourhood1" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Heeelp.Core.Domain.City">
+    <Position X="11.25" Y="8.75" Width="1.5" />
+    <AssociationLine Name="StateRegion" Type="Heeelp.Core.Domain.StateRegion" FixedToPoint="true">
+      <Path>
+        <Point X="11.688" Y="8.75" />
+        <Point X="11.688" Y="7.267" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAQCAAAAAAAABAAQAIAAAAAAgAAAAoAAAAAQ=</HashCode>
+      <FileName>LocationAggregate\City.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="StateRegion" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="CityZone" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Heeelp.Core.Domain.CityZone">
+    <Position X="7.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAIAAAgAAQAAAAAAAAgABAAAAACAAQ=</HashCode>
+      <FileName>LocationAggregate\CityZone.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="City" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Neighbourhood" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Heeelp.Core.Domain.Country">
+    <Position X="0.5" Y="3.5" Width="2" />
+    <AssociationLine Name="Language" Type="Heeelp.Core.Domain.Language" FixedFromPoint="true">
+      <Path>
+        <Point X="0.938" Y="6.209" />
+        <Point X="0.938" Y="7" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AIAAAAAACwAAAAAAAAAgAAQAAgAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LocationAggregate\Country.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Language" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="CountryRegion" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Heeelp.Core.Domain.CountryRegion">
+    <Position X="4.25" Y="4.75" Width="2.25" />
+    <AssociationLine Name="State" Type="Heeelp.Core.Domain.State" FixedFromPoint="true">
+      <Path>
+        <Point X="6.5" Y="6.188" />
+        <Point X="7.75" Y="6.188" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAAAAAQAAAIQAAAAAAAABAAAAAA=</HashCode>
+      <FileName>LocationAggregate\CountryRegion.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Country" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="State" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Heeelp.Core.Domain.State">
+    <Position X="7.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQACAEAAAAAAgAAQAIgAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>LocationAggregate\State.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CountryRegion" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="StateRegion" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Heeelp.Core.Domain.StateRegion">
+    <Position X="11" Y="4.75" Width="1.5" />
+    <AssociationLine Name="City" Type="Heeelp.Core.Domain.City" FixedFromPoint="true">
+      <Path>
+        <Point X="12.312" Y="7.267" />
+        <Point X="12.312" Y="8.75" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAIAAAAAAQAIAAAAAAgAAAAJAAAAAQ=</HashCode>
+      <FileName>LocationAggregate\StateRegion.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="State" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="City" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Heeelp.Core.Domain.Language">
+    <Position X="0.5" Y="7" Width="1.5" />
+    <AssociationLine Name="Country" Type="Heeelp.Core.Domain.Country" FixedFromPoint="true">
+      <Path>
+        <Point X="1.812" Y="7" />
+        <Point X="1.812" Y="6.209" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AIABAAAAAAAAAQAAAAAAAAQAAgIAAAAgAAAAAAAAAAg=</HashCode>
+      <FileName>SystemValuesAggregate\Language.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Country" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

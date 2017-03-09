@@ -1,0 +1,91 @@
+
+/*Cor Primary Base*/
+.btn-default, .page-button, .btn-primary, .box-form-button, .nav-manager, footer, .list-coupons-item-code, .hlp-card-button, .offers__item--button, .offers__item--button, .login-submit, .deal-header--button, .hl-btn-primary   {
+	background-color:#13a1a2!important;
+	color:#fff!important;
+	border:0;
+    outline:none!important;
+}
+
+.border-left-theme {
+    border-left:4px solid #13a1a2;
+}
+
+.color-text-theme {
+    color:#13a1a2;
+}
+
+.nav.fanpage-nav-tab > li:hover > a, .details-price, .list-coupons-item-new-price, .nav > li:hover {
+     color: #13a1a2!important;
+}
+
+ .header.navigation, .navbar-default {
+     background:#fff;
+     border-bottom:3px solid #13a1a2;
+ }
+
+       .login-form input#Email:focus, 
+.login-form input#Password:focus {
+
+    border-bottom:1px solid #13a1a2;
+}
+
+
+/*./Cor Primary Base*/
+
+
+/*Secondary Light Color*/
+.hl-navbar-nav li:hover, .navbar-toggle:focus, .navbar-default .navbar-toggle:hover, .offers__item--newprice:before, .offers__item--patrocinado:before, .login-submit:hover, .hl-btn-primary:hover {
+    background:#19b1b2!important;
+}
+/*./Secondary Light Color*/
+
+
+/*Third Dark Color*/
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus, .part-footer, .nav-manager li:hover a, .nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+    background-color:#128485;
+}
+/*./Third Dark Color */
+
+
+
+
+
+footer a, .nav-manager a {
+    color:#fff;
+}
+
+footer a:hover {
+    background:none!important;
+    text-decoration:underline!important;
+}
+
+
+.nav.fanpage-nav-tab>li>a:focus, .nav.fanpage-nav-tab>li>a:hover {
+        background-color: #f6f7f9;
+        border:1px solid #f6f7f9;
+}
+
+
+
+.hl-navbar-nav li {
+    border-right:1px solid #ededed;
+}
+
+.hl-navbar-nav li a {
+    color:#696969!important;
+    text-transform:uppercase;
+    font-weight:600;
+    font-size:.9em;
+}
+
+
+
+.navbar-default .navbar-nav>li>a {
+	color:#777;
+}
+
+
+.hl-navbar-nav--text {
+  color:#b2dcdc;
+}

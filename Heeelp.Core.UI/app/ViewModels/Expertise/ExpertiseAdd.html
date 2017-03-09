@@ -1,0 +1,70 @@
+﻿<div class="sub-header">
+    <h5>Incluir Expertise</h5>
+</div>
+<div class="progress">
+    <div class="progress-bar progress-bar-default" style="width:0%"></div>
+</div>
+
+
+<div class="well">
+
+
+    <div class="form-group">
+        <label class="control-label" for="inputDefault">Área de Atuação</label>
+        <input type="text" class="form-control" id="txtExpertiseName" ng-model="Expertise.Name" placeholder="Digite a Área de Atuação" />
+    </div>
+
+    <div class="form-group">
+        <label class="control-label" for="inputDefault">Área de atuação pai</label>
+        <div id="listExpertise"></div>
+        <!--<select name="repeatSelect" id="repeatSelect" ng-model="Expertise.ExpertiseFather">
+        <option ng-repeat="option in expertiseList" value="{{option.ExpertiseId}}">{{option.Name}}</option>
+    </select>-->
+
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Selecione uma Imagem</label> <br />
+        <!--<input class="form-control" type="file" ng-file-model="files" multiple />-->
+        <label class="btn btn-default" id="BtnSelecionar" for="fileToUpload" ng-file-model="files">Selecionar uma imagem</label>
+        <input type="file" id="fileToUpload" class="btn btn-default" ng-file-model="files" multiple>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label" for="inputDefault">Descrição</label>
+        <input type="text" class="form-control" id="txtExpertiseDescription" ng-model="Expertise.Description" placeholder="Insira uma descrição" />
+    </div>
+
+    
+    <button ng-click="uploadFile(Expertise)" class="btn btn-lg btn-primary btn-fullwidth">Cadastrar</button>
+    
+    
+</div>
+ 
+    
+
+
+<table class="table table-hover table-bordered" bs-table>
+    <thead>
+        <tr>
+            <th ng-click="predicate='ExpertiseId'; reverse=!reverse">ExpertiseId</th>
+            <th ng-click="predicate='Name'; reverse=!reverse">Name</th>
+            <th ng-click="predicate='Description'; reverse=!reverse">Description</th>
+            <th ng-click="predicate='DataCreated'; reverse=!reverse">Data Criação</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr ng-repeat="expertise in expertiseSaveList | orderBy:predicate:reverse">
+            <td>{{expertise.ExpertiseId}}</td>
+            <td>{{expertise.Name}}</td>
+            <td>{{expertise.DefaultDescription}}</td>
+            <td>{{expertise.CreatedDateUTC}}</td>
+
+            <td class="action-column">
+                <button type="button" class="btn btn-info btn-sm" ng-click="Edit(expertise)">Edit</button>
+            </td>
+        </tr>
+    </tbody>
+</table> 

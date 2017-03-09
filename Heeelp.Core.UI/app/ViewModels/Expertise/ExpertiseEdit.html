@@ -1,0 +1,61 @@
+﻿ 
+<div>
+    Incluir Expertise
+    <br />
+    <br />
+    Área de Atuação:
+    <input type="text" id="txtExpertiseName"  ng-model="Expertise.Name" placeholder="Digite a Área de Atuação" />
+
+    <br />
+    <br />
+    Descrição:
+    <input type="text" id="txtExpertiseDescription" ng-model="Expertise.Description" placeholder="Descrição" />
+
+
+    <br />
+    <br /> 
+    <select name="repeatSelect" id="repeatSelect" ng-model="Expertise.ExpertiseFather">
+        <option ng-repeat="option in expertiseList" value="{{option.ExpertiseId}}">{{option.Name}}</option>
+    </select>
+
+    <br />
+    <br />
+     
+
+    <span>Selecione uma Imagem...</span> 
+    <input type="file" ng-file-model="files" multiple /> 
+
+
+    <br />
+    <br />
+    <button ng-click="uploadFile(Expertise)">Cadastrar</button>
+</div>
+<br />
+<br />
+<br />
+<br />
+
+<table class="table table-hover table-bordered" bs-table>
+    <thead>
+        <tr>
+            <th ng-click="predicate='ExpertiseId'; reverse=!reverse">ExpertiseId</th>
+            <th ng-click="predicate='Name'; reverse=!reverse">Name</th>
+            <th ng-click="predicate='Description'; reverse=!reverse">Description</th>
+            <th ng-click="predicate='DataCreated'; reverse=!reverse">Data Criação</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        // you can use ng-repeat in tbody as below in tr html tag
+        <tr ng-repeat="expertise in expertiseSaveList | orderBy:predicate:reverse">
+            <td>{{expertise.ExpertiseId}}</td>
+            <td>{{expertise.Name}}</td>
+            <td>{{expertise.DefaultDescription}}</td>
+            <td>{{expertise.CreatedDateUTC}}</td>
+
+            <td class="action-column">
+                <!--<button type="button" class="btn btn-info btn-sm" ng-click="Edit(expertise)">Edit</button>-->
+            </td>
+        </tr>
+    </tbody>
+</table> 

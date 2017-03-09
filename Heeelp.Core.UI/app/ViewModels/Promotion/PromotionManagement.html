@@ -1,0 +1,298 @@
+﻿
+
+
+<link href="../../../Content/css/font-awesome.min.css" rel="stylesheet" />
+<style>
+    .full button span {
+        background-color: limegreen;
+        border-radius: 32px;
+        color: black;
+    }
+
+    .partially button span {
+        background-color: orange;
+        border-radius: 32px;
+        color: black;
+    }
+
+    .ta-editor {
+        min-height: 150px;
+        height: auto;
+        overflow: auto;
+        font-family: inherit;
+        font-size: 100%;
+    }
+</style>
+
+
+<div class="sub-header">
+    <h5>Adicionar Promoções</h5>
+</div>
+
+
+<div class="well">
+
+
+
+
+    <div>
+
+        Promotion Person:
+        <select name="repeatSelect" id="repeatSelect" class="form-control" ng-change="optionPerson(Promotion.CompanyIntegrationCode)" ng-model="Promotion.CompanyIntegrationCode">
+            <option ng-repeat="option in PersonIntegrationList | orderBy:'FantasyName'" value="{{option.CompanyIntegrationCode}}">{{option.FantasyName}}</option>
+        </select>
+        <br />
+        <br />
+        <button ng-show="Promotion.CompanyIntegrationCode" ng-click="OpenDetails()" class="btn btn-lg btn-fullwidth btn-primary">Adicionar Promoção de Desconto</button>
+
+
+        <!--<a href="#" ng-show="VisibleRemoveAll" ng-click="ConfirmRemoveItem()" class="btn-icon pull-right" tooltip-placement="left" uib-tooltip="Excluir usuários selecionados"><i class="material-icons">delete</i></a>-->
+        <br />
+        <br />
+        <table ng-show="PromotionList.length >0" class="table table-responsive">
+            <thead>
+                <tr>
+                    <!--<th><input type="checkbox" class="cbxAll" name="name" value="" /></th>-->
+                    <th></th>
+                    <th></th>
+                    <th>Titulo</th>
+                    <th>Breve Descrição </th>
+                    <th>Data de expiração</th>
+                    <th>Status da promoção</th>
+                    <!--<th>Site</th>
+                    <th>Tipo</th>
+                    <th>Status</th>-->
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr ng-repeat="promotion in PromotionList">
+                    <th>
+                        <input type="hidden" value="{{promotion.IntegrationCode}}" />
+                        <!--<input type="checkbox" ng-click="CheckItem(this)" class="cbxItem" data-value="{{promotion.IntegrationCode}}" value="" />-->
+                    </th>
+                    <td><img style="cursor:pointer;width: 40px;height: 40px;" ng-src="{{promotion.FileUrl != null && promotion.FileUrl || '/images/avatar-profile.jpg' }}" class="img-rounded" ng-click="UploadPromotionImage(promotion)" /></td>
+                    <td><a href="#" ng-click="EditPromotion(promotion.IntegrationCode)">{{promotion.Title}}</a></td>
+                    <td ng-bind-html="promotion.ShortDescription"></td>
+                    <td>{{promotion.ValidUntilUTC}}</td>
+                    <td>{{promotion.PromotionStatusName}}</td>
+
+                <!--<td>{{promotion.PersonalWebSite}}</td>
+                <td>{{promotion.PersonStatusName}}</td>-->
+                <!--<td>{{item.Rules}}
+                </td>-->
+                    <td>
+                    <td><a class="EditCompanyButton" href="#" title="Editar Promoção" tooltip-placement="top" ng-click="OpenFullDetailsModal(promotion)" uib-tooltip="Editar informações da promoção"><i class="material-icons">mode_edit</i></a></td>
+                    <td><a href="#" title="Excluir Promoção" tooltip-placement="top" uib-tooltip="Excluir promoção permanentemente" ng-click="Deleted(promotion)"><i class="material-icons">delete_forever</i></a></td>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <div class="modal" id="AddPromotion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none; padding-right: 17px;">
+            <div class="modal-backdrop fade in"></div>
+            <div class="modal-dialog" role="document">
+                <div class="modal-content" style="z-index:999999999">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" ng-click="CloseModal()" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                        <h4 class="modal-title" id="myModalLabel" style="text-align:center;">{{TituloModal}}</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form id="CompanyForm" name="CompanyForm" ng-submit="SaveCompany(SelecteItemToAdd)" novalidate>
+                            <input type="hidden" ng-model="SelecteItemToAdd.PromotionIntegrationCode" value="{{SelecteItemToAdd.PromotionIntegrationCode}}" />
+                            Area de Atuação
+                            <div class="form-group">
+                                <div ng-hide="BlockEdit" id="listExpertise">   </div><br />
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Titulo da Promoção</label>
+                                <input type="text" class="form-control" name="AddPromotion" required id="AddPromotion" maxlength="250" placeholder="Titulo da Promoção" ng-model="SelecteItemToAdd.Title" value="{{SelecteItemToAdd.Title}}">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Breve descrição</label>
+                                <!--<input type="text" class="form-control" name="AddShortDescription" required id="AddShortDescription" maxlength="500" placeholder="Breve descrição" ng-model="SelecteItemToAdd.ShortDescription" value="{{SelecteItemToAdd.ShortDescription}}">-->
+                                <div text-angular="text-angular" name="AddShortDescription" required id="AddShortDescription" maxlength="500" placeholder="Breve descrição" ng-model="SelecteItemToAdd.ShortDescription" ta-disabled='disabled'></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Data de inicio</label>
+                                <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="SelecteItemToAdd.StartDateUTC" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Data de validade da promoção</label>
+                                <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="SelecteItemToAdd.ValidUntilUTC" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default" ng-click="open2()"><i class="glyphicon glyphicon-calendar"></i></button>
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Qual o tempo para ativar o cupom após emiti-lo?</label>
+                                <select class="form-control" name="repeatSelect" id="selectRequiredTime" ng-model="SelecteItemToAdd.RequiredTimeForActivation">
+                                    <option value="0">Imediato</option>
+                                    <option value="1">1 hora</option>
+                                    <option value="2">2 horas</option>
+                                    <option value="3">3 horas</option>
+                                    <option value="6">6 horas</option>
+                                    <option value="12">12 horas</option>
+                                    <option value="24">1 Dia</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Modo de Cobrança</label>
+                                <select class="form-control" ng-disabled="BlockEdit" name="repeatSelect" id="selectBillingModel" ng-model="SelecteItemToAdd.PromotionBillingModelId">
+                                    <option ng-repeat="option in PromotionBillingModelList" value="{{option.Id}}">{{option.Name}}</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Recorrência da promoção</label>
+                                <select class="form-control" ng-disabled="BlockEdit" name="repeatSelect" id="selectRecurrence" ng-model="SelecteItemToAdd.PromotionRecurrenceId">
+                                    <option ng-repeat="option in PromotionRecurrenceList" value="{{option.Id}}">{{option.Name}}</option>
+                                </select>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Tipo de pagamento</label>
+                                <select name="repeatSelect" ng-disabled="BlockEdit" class="form-control" id="selectPaymentType" ng-model="SelecteItemToAdd.PromotionPaymentTypeId">
+                                    <option ng-repeat="option in PromotionPaymentTypeList" value="{{option.Id}}">{{option.Name}}</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Método de pagamento</label>
+                                <select name="repeatSelect" ng-disabled="BlockEdit" class="form-control" id="selectMethodPayment" ng-model="SelecteItemToAdd.PromotionMethodPaymentId">
+                                    <option ng-repeat="option in PromotionMethodPaymentList" value="{{option.Id}}">{{option.Name}}</option>
+                                </select>
+                            </div>
+                            <div class="form-group" ng-hide="SelecteItemToAdd.PromotionMethodPaymentId == 3">
+                                <label for="exampleInputPassword1">Preço Normal</label>
+                                <input type="text" ng-disabled="BlockEdit" class="form-control" ng-pattern="MoneyRegex" maxlength="20" ng-model="SelecteItemToAdd.NormalPrice" placeholder="100,00" value="{{SelecteItemToAdd.NormalPrice}}">
+                            </div>
+                            <div class="form-group" ng-hide="SelecteItemToAdd.PromotionMethodPaymentId != 1">
+                                <label for="exampleInputPassword1">Preço Promocional</label>
+                                <input type="text" ng-disabled="BlockEdit" class="form-control" ng-pattern="MoneyRegex" maxlength="20" ng-model="SelecteItemToAdd.PromotionalPrice" placeholder="100,00" value="{{SelecteItemToAdd.PromotionalPrice}}">
+                            </div>
+                            <div class="form-group" ng-hide="SelecteItemToAdd.PromotionMethodPaymentId == 1">
+                                <label for="exampleInputPassword1">Percentual de desconto</label>
+                                <input type="text" ng-disabled="BlockEdit" class="form-control" ng-pattern="NumberRegex" placeholder="80" maxlength="2" ng-model="SelecteItemToAdd.DiscountePercentege" value="{{SelecteItemToAdd.DiscountePercentege}}">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Numero de cupons</label>
+                                <input type="text" class="form-control" required id="AddPromotioNumberOfAvailableCoupons" maxlength="20" ng-model="SelecteItemToAdd.NumberOfAvailableCoupons" placeholder="100000" value="{{SelecteItemToAdd.NumberOfAvailableCoupons}}">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary" ng-click="sendPromotion(SelecteItemToAdd)" ng-disabled="BlockControls" data-dismiss="modal">Salvar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="modal" id="AddPromotionImage" tabindex="-1" role="dialog" aria-labelledby="AddPromotionImage" style="display: none; padding-right: 17px;">
+            <div class="modal-backdrop fade in"></div>
+            <div class="modal-dialog" role="document">
+                <div class="modal-content" style="z-index:999999999">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" ng-click="CloseModalUploadImage()" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                        <h4 class="modal-title" id="myModalLabel" style="text-align:center;">Imagem da Promoção </h4>
+                    </div>
+                    <div class="modal-body">
+                        <form id="CompanyForm" name="CompanyForm" ng-submit="sendPromotionImages(selectedPromotion)" novalidate>
+
+                            <div class="form-group">
+                                <input type="file" ng-file-model="files" multiple class="form-group" />
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary" data-dismiss="modal">Salvar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br />
+        <br />
+
+
+        <div class="modal" id="EditPromotionDetailsModal" tabindex="-1" role="dialog" aria-labelledby="EditPromotion" style="display: none; padding-right: 17px;">
+            <div class="modal-backdrop fade in"></div>
+            <div class="modal-dialog" role="document">
+                <div class="modal-content" style="z-index:999999999">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" ng-click="CloseModalEditPromotion()" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                        <h4 class="modal-title" id="myModalLabel" style="text-align:center;">Imagem da Promoção </h4>
+                    </div>
+                    <div class="modal-body">
+                        <form id="CompanyForm" name="CompanyForm" ng-submit="EditPromotionDetails(selectedPromotion)" novalidate>
+
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Alertas</label>
+                                <!--<textarea class="form-control" name="AddPromotionAlert" required id="AddPromotionAlert" placeholder="Alerta da Promoção" ng-model="selectedPromotion.Alert" value="{{SelecteItemToAdd.Alert}}"></textarea>-->
+                                <div text-angular="text-angular" name="AddPromotionAlert" required id="AddPromotionAlert" placeholder="Alerta da Promoção" ng-model="selectedPromotion.Alert" ta-disabled='disabled'></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Descrição Completa</label>
+                                <!--<textarea class="form-control" name="AddShortDescription" required id="AddShortDescription"  placeholder="Descrição Completa" ng-model="selectedPromotion.FullDescription" value="{{SelecteItemToAdd.FullDescription}}"></textarea>-->
+                                <div text-angular="text-angular" name="AddShortDescription" required id="AddShortDescription"  placeholder="Descrição Completa" ng-model="selectedPromotion.FullDescription" ta-disabled='disabled'></div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary" data-dismiss="modal">Salvar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="EditPromotionModal" tabindex="-1" role="dialog" aria-labelledby="EditPromotion" style="display: none; padding-right: 17px;">
+            <div class="modal-backdrop fade in"></div>
+            <div class="modal-dialog" role="document">
+                <div class="modal-content" style="z-index:999999999">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" ng-click="CloseModalEditPromotion()" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                        <h4 class="modal-title" id="myModalLabel" style="text-align:center;">Imagem da Promoção </h4>
+                    </div>
+                    <div class="modal-body">
+                        <form id="CompanyForm" name="CompanyForm" ng-submit="EditPromotionDetails(selectedPromotion)" novalidate>
+
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Alertas</label>
+                                <textarea class="form-control" name="AddPromotionAlert" required id="AddPromotionAlert" placeholder="Alerta da Promoção" ng-model="selectedPromotion.Alert" value="{{SelecteItemToAdd.Alert}}"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Descrição Completa</label>
+                                <textarea class="form-control" name="AddShortDescription" required id="AddShortDescription" " placeholder="Descrição Completa" ng-model="selectedPromotion.FullDescription" value="{{SelecteItemToAdd.FullDescription}}"></textarea>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary" data-dismiss="modal">Salvar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <br />
+        <br />
+    </div>
+</div>
+
+<div class="svg-loader" ng-show="Lock">
+    <img src="../../../images/svg-loader/oval.svg" width="30" alt="">
+    <span>Processando...</span>
+</div>
+

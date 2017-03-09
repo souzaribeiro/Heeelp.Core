@@ -1,0 +1,153 @@
+﻿<div class="sub-header">
+    <h5>Adicionar Promoções</h5>
+</div>
+
+
+<div class="well">
+    <div class="form-group">
+        <label class="control-label">Selecione a empresa</label>
+         <select class="form-control" name="repeatSelect" id="repeatSelect" ng-change="optionPerson(Promotion.PersonId)" ng-model="Promotion.PersonId">
+        <option ng-repeat="option in PersonIntegrationList" value="{{option.PersonId}}">{{option.Name}}</option>
+    </select>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Área de Atuação</label>
+        <div id="listExpertise">   </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Título da Promoção</label>
+        <input class="form-control" type="text" id="txtPromotionTitle" ng-model="Promotion.Title" placeholder="Digite o titulo da promoção" />
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Resumo da descrição</label>
+          <input class="form-control" type="text" id="txtPromotionShortDescription" ng-model="Promotion.ShortDescription" placeholder="Digite a Descrição breve" />
+
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Data Inicial</label>
+        <input class="form-control" placeholder="MM/DD/YYYY" type="text" name="txtPromotionStartDateUTC" id="txtPromotionStartDateUTC" mask='39/19/9999' ng-model="Promotion.StartDateUTC" required />
+    </div>
+
+     <div class="form-group">
+        <label class="control-label">Data Final</label>
+         <input class="form-control" placeholder="MM/DD/YYYY" type="text" name="txtPromotionValidUntilUTC" mask='39/19/9999' ng-model="Promotion.ValidUntilUTC" required />
+    </div>
+
+    <div class="form-group">
+         <label class="control-label"> Qual o tempo para ativar o cupom após emiti-lo?</label>
+    <select class="form-control" name="repeatSelect" id="repeatSelect" ng-model="Promotion.RequiredTimeForActivation">
+        <option value="0">Imediato</option>
+        <option value="1">1 hora</option>
+        <option value="2">2 horas</option>
+        <option value="3">3 horas</option>
+        <option value="6">6 horas</option>
+        <option value="12">12 horas</option>
+        <option value="24">1 Dia</option>
+    </select>
+    </div>
+
+
+    <div class="form-group">
+          <label class="control-label">
+              Modelo de Pagamento
+          </label>
+    <select name="repeatSelect" id="repeatSelect" ng-model="Promotion.PromotionBillingModelId">
+        <option ng-repeat="option in PromotionBillingModelList" value="{{option.PromotionBillingModelId}}">{{option.Name}}</option>
+    </select>
+    </div>
+
+    <div class="form-group">
+        
+        <label class="control-label">Recorrência da Promoção</label>
+
+    <select class="form-control" name="repeatSelect" id="repeatSelect" ng-model="Promotion.PromotionRecurrenceId">
+        <option ng-repeat="option in PromotionRecurrenceList" value="{{option.PromotionRecurrenceId}}">{{option.Name}}</option>
+    </select>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Desconto da Promoção</label>
+
+    <input class="form-control" type="number" id="txtPromotionDiscountePercentege" ng-model="Promotion.DiscountePercentege" placeholder="Digite valor de desconto" />
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Descrição completa</label>
+
+    <input class="form-control" type="text" id="txtPromotionFullDescription" ng-model="Promotion.FullDescription" placeholder="Digite a Descrição detalhada" />
+    </div>
+
+    <div class="form-group">
+        
+    <label class="control-label">Alerta da Promoção</label>
+    <input class="form-control" type="text" id="txtPromotionAlert" ng-model="Promotion.Alert" placeholder="Digite Alert" />
+
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Preço Normal</label>
+         <input class="form-control" type="number" id="txtPromotionNormalPrice" ng-model="Promotion.NormalPrice" placeholder="Digite valor normal" />
+
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Número total de cupons disponíveis</label>
+         <input class="form-control" type="number" id="txtPromotionNumberOfAvailableCoupons" ng-model="Promotion.NumberOfAvailableCoupons" placeholder="Digite numero de cupons" />
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Tipo da Promoção</label>
+         <select class="form-control" name="repeatSelect" id="repeatSelect" ng-model="Promotion.PromotionTypeId">
+        <option ng-repeat="option in PromotionTypeList" value="{{option.PromotionTypeId}}">{{option.Name}}</option>
+    </select>
+    </div>
+
+    <div class="form-group">
+        
+         <label class="control-label">Promotion PaymentType</label>
+    <select class="form-control" name="repeatSelect" id="repeatSelect" ng-model="Promotion.PromotionPaymentTypeId">
+        <option ng-repeat="option in PromotionPaymentTypeList" value="{{option.PromotionPaymentTypeId}}">{{option.Name}}</option>
+    </select>
+
+    </div>
+
+
+     <button ng-click="sendPromotionImages(Promotion)" class="btn btn-lg btn-fullwidth btn-primary">Cadastrar Promoção</button>
+
+<!-- 
+    <span>Selecione uma Imagem</span>
+    <input type="file" ng-file-model="files" multiple /> -->
+
+     <label class="btn btn-default" id="BtnSelecionar" for="fileToUpload" ng-file-model="files">Selecionar uma imagem</label>
+    <input type="file" id="fileToUpload" class="btn btn-default" ng-file-model="files" multiple>
+
+
+
+    <button ng-click="calculatePromotion()" class="btn btn-lg btn-fullwidth btn-default">Calcular Valor Promoção</button>
+
+
+    <button ng-click="sendPromotionImages(Promotion)" class="btn btn-lg btn-fullwidth btn-default">Cadastrar Imagens</button>
+
+
+</div>
+<div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<br />
+<br />

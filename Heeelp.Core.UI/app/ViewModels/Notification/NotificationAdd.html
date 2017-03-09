@@ -1,0 +1,50 @@
+﻿
+<div class="sub-header">
+    <h5>Incluir notificação</h5>
+</div>
+<div class="progress">
+    <div class="progress-bar progress-bar-default" style="width:0%"></div>
+</div>
+
+<div class="well">
+    
+    <div class="form-group">
+        
+        <label class="control-label">Tipo de mensagem</label>
+          <select class="form-control" id="ddlCommunicationType" ng-model="Notification.CommunicationTypeId">
+        <option ng-repeat="option in CommunicationTypeList" value="{{option.CommunicationTypeId}}">{{option.Name}}</option>
+    </select>
+
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label">Canal</label>
+         <select class="form-control" id="ddlChannel" ng-model="Notification.ChannelId">
+        <option ng-repeat="option in ChannelList" value="{{option.ChannelId}}">{{option.Name}}</option>
+    </select>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Idioma</label>
+        <select class="form-control" id="ddlLanguage" data-ng-model="Notification.LanguageId">
+        <option ng-repeat="option in LanguagesList" value="{{option.LanguageId}}">{{option.Name}} </option>
+    </select>
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label">Corpo da mensagem</label>
+         <textarea class="form-control" type="text" cols="40" rows="3" id="txtCommunicationBody" ng-model="Notification.BodyTemplate" placeholder="Corpo da Mensagem"></textarea>
+    </div>
+
+
+
+    <button class="btn btn-lg btn-fullwidth btn-primary" ng-click="CreateCommunication(Notification)">Cadastrar</button>
+
+</div>
+
+<div>
+ 
+
+</div> 

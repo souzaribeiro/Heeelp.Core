@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{25091993-EB42-445F-928A-A3775E5DF15E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Heeelp.Core.Domain</RootNamespace>
+    <AssemblyName>Heeelp.Core.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Laboratorio|AnyCPU'">
+    <OutputPath>bin\Laboratorio\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Homol|AnyCPU'">
+    <OutputPath>bin\Homol\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommandAggregate\CommandOrigin.cs" />
+    <Compile Include="CommandAggregate\CommandQuee.cs" />
+    <Compile Include="CommandAggregate\CommandStatus.cs" />
+    <Compile Include="CommandAggregate\CommandType.cs" />
+    <Compile Include="CommandAggregate\CommandWorkFlow.cs" />
+    <Compile Include="CommandAggregate\EventQuee.cs" />
+    <Compile Include="CommandAggregate\EventStatus.cs" />
+    <Compile Include="CommandAggregate\EventType.cs" />
+    <Compile Include="CommandAggregate\EventWorkflow.cs" />
+    <Compile Include="FileTemp\FileTemp.cs" />
+    <Compile Include="PersonAggregate\PersonBenefitClub.cs" />
+    <Compile Include="PersonAggregate\PersonRules.cs" />
+    <Compile Include="SelfRegistrationAggregate\SelfRegistration.cs" />
+    <Compile Include="SystemValuesAggregate\BaseCEPs.cs" />
+    <Compile Include="SystemValuesAggregate\DomainEnumerators.cs" />
+    <Compile Include="SystemValuesAggregate\FIleTemp.cs" />
+    <Compile Include="SystemValuesAggregate\RulesStatus.cs" />
+    <Compile Include="SystemValuesAggregate\Skin.cs" />
+    <Compile Include="SystemValuesAggregate\SystemValues.cs" />
+    <Compile Include="SystemValuesAggregate\AdminUser.cs" />
+    <Compile Include="SystemValuesAggregate\ApprovalStatus.cs" />
+    <Compile Include="ExpertiseAggregate\ExpertisePhoto.cs" />
+    <Compile Include="PersonAggregate\PersonExpertise.cs" />
+    <Compile Include="PersonAggregate\PersonFile.cs" />
+    <Compile Include="PersonAggregate\PersonInterest.cs" />
+    <Compile Include="SystemValuesAggregate\PersonProfile.cs" />
+    <Compile Include="SystemValuesAggregate\AddressType.cs" />
+    <Compile Include="LocationAggregate\City.cs" />
+    <Compile Include="LocationAggregate\CityZone.cs" />
+    <Compile Include="SystemValuesAggregate\Contract.cs" />
+    <Compile Include="SystemValuesAggregate\ContractType.cs" />
+    <Compile Include="LocationAggregate\Country.cs" />
+    <Compile Include="LocationAggregate\CountryRegion.cs" />
+    <Compile Include="SystemValuesAggregate\CouponEstatisticMode.cs" />
+    <Compile Include="SystemValuesAggregate\CouponPeriodMode.cs" />
+    <Compile Include="SystemValuesAggregate\Currency.cs" />
+    <Compile Include="SystemValuesAggregate\DocumentType.cs" />
+    <Compile Include="ExpertiseAggregate\Expertise.cs" />
+    <Compile Include="ExpertiseAggregate\ExpertiseHistory.cs" />
+    <Compile Include="SystemValuesAggregate\Language.cs" />
+    <Compile Include="SystemValuesAggregate\Menu.cs" />
+    <Compile Include="SystemValuesAggregate\Module.cs" />
+    <Compile Include="LocationAggregate\Neighbourhood.cs" />
+    <Compile Include="PageAggregate\Page.cs" />
+    <Compile Include="PageAggregate\PageType.cs" />
+    <Compile Include="PersonAggregate\Person.cs" />
+    <Compile Include="PersonAggregate\PersonAddress.cs" />
+    <Compile Include="PersonAggregate\PersonContract.cs" />
+    <Compile Include="PersonAggregate\PersonDocument.cs" />
+    <Compile Include="PersonAggregate\PersonHistoric.cs" />
+    <Compile Include="SystemValuesAggregate\PersonOriginType.cs" />
+    <Compile Include="SystemValuesAggregate\PersonStatus.cs" />
+    <Compile Include="SystemValuesAggregate\PersonType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SystemValuesAggregate\SecuritySource.cs" />
+    <Compile Include="SystemValuesAggregate\ServerInstance.cs" />
+    <Compile Include="LocationAggregate\State.cs" />
+    <Compile Include="LocationAggregate\StateRegion.cs" />
+    <Compile Include="SystemValuesAggregate\SystemParameter.cs" />
+    <Compile Include="UserAggregate\User.cs" />
+    <Compile Include="UserAggregate\UserFile.cs" />
+    <Compile Include="UserAggregate\UserGroup.cs" />
+    <Compile Include="UserAggregate\UserGroupMenu.cs" />
+    <Compile Include="UserAggregate\UserGroupUser.cs" />
+    <Compile Include="UserAggregate\UserHistory.cs" />
+    <Compile Include="UserAggregate\UserModule.cs" />
+    <Compile Include="UserAggregate\UserPreference.cs" />
+    <Compile Include="SystemValuesAggregate\UserProfile.cs" />
+    <Compile Include="SystemValuesAggregate\UserStatus.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Heeelp.Core.Common\Heeelp.Core.Common.csproj">
+      <Project>{baf088f8-3fcb-45ef-a228-6424c34c65ca}</Project>
+      <Name>Heeelp.Core.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Heeelp.Core.Process.Event\Heeelp.Core.Process.Event.csproj">
+      <Project>{15826cb6-684f-46d0-8213-fb36d7cc4a38}</Project>
+      <Name>Heeelp.Core.Process.Event</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure\Heeelp.Core.Infrastructure.csproj">
+      <Project>{b5786d07-5888-4df5-b295-3fea593f3bfe}</Project>
+      <Name>Heeelp.Core.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="CommandAggregate\CommandDiagram.cd" />
+    <None Include="ExpertiseAggregate\ExpertiseClassDiagram.cd" />
+    <None Include="LocationAggregate\LocationClassDiagram.cd" />
+    <None Include="packages.config" />
+    <None Include="PageAggregate\PageClassDiagram.cd" />
+    <None Include="PersonAggregate\PersonClassDiagram.cd" />
+    <None Include="SystemValuesAggregate\SystemValuesClassDiagram.cd" />
+    <None Include="UserAggregate\UserClassDiagram.cd" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

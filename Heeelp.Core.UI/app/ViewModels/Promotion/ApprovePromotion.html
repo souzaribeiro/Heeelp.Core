@@ -1,0 +1,96 @@
+﻿<div class="sub-header">
+    <h5>Aprovar Promoções</h5>
+</div>
+
+<section class="offers ">
+<br>
+
+    <div class="offers__container">
+
+        <header class="offers__header">
+
+            <div class="col-md-2">
+                <div class="btn-group dropdown hlp-dropdown-filter" uib-dropdown>
+                    <button id="single-button" type="button" class="btn  dropdown-toggle btn-default-filter" uib-dropdown-toggle ng-disabled="disabled">
+                        {{selectedOrderByText}} <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                        <li ng-click="ChangeOrderPromotionList(1, LowerPrice)"><a href="#">{{LowerPrice}}</a></li>
+                        <li ng-click="ChangeOrderPromotionList(2, HigherPrice)"><a href="#">{{HigherPrice}}</a></li>
+                        <li ng-click="ChangeOrderPromotionList(3, HigherDiscount)"><a href="#">{{HigherDiscount}}</a></li>
+
+                    </ul>
+                </div>
+            </div>
+            <div style="clear:both"></div>
+        </header>
+
+
+
+
+
+        <div ng-repeat="card in CardList" class="col-md-4">
+            <div class="card">
+                <header class="hlp-card-header">
+                    <div class="hlp-card-avatar"><img src="{{card.PersonLogo}}"></div>
+                    <div class="hlp-card-name">{{card.PersonName}}</div>
+                    <small>Válido até {{card.DateOfExpire}}</small>
+                    <span class="hlp-card-number-coupons">Restam {{card.NumberOfAvailableCoupons}} cupons</span>
+                </header>
+
+                <a href="/Promotion/PromotionDetail/{{card.PromotionId}}">
+                    <div class="card-img" ng-style="{'background-image':'url({{card.PhotoURL}})'}" style="background-image:url(images/stockphotos/exemplo4.jpg);clear:both;padding: 0;" valign="bottom">
+                        <div class="hlp-card-overlay">
+                            <div class="hlp-card-title">
+                                {{card.Title}}
+                            </div>
+
+                            <div class="hlp-card-price">
+                                <span class="hlp-card-oldprice">{{card.NormalPrice}}</span><br>
+                                {{card.PromotionalPrice}}
+                            </div>
+                        </div>
+                        <!-- Card Overlay-->
+                    </div>
+                    <!-- Card Img-->
+                </a>
+
+                <div class="card-content">
+                    <div class="btn btn-success btn-lg btn-fullwidth no-radius" ng-click="approve(card.PromotionIntegrationCode)">Aprovar</div>
+                    <div class="btn btn-danger btn-lg btn-fullwidth no-radius" ng-click="refuse(card.PromotionIntegrationCode)">Recusar</div>
+                </div>
+                <!--./Card Content-->
+            </div>
+          
+            <!--Card-->
+        </div>
+
+    </div>
+    <!-- Offers Container -->
+
+
+    <div class="modal" id="RefusePromotionModal" tabindex="-1" role="dialog" aria-labelledby="RecusedPromotion" style="display: none; padding-right: 17px;">
+        <div class="modal-backdrop fade in"></div>
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" style="z-index:999999999">
+
+                <div class="modal-header">
+                    <button type="button" class="close" ng-click="closeModalRecused()" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title" id="myModalLabel" style="text-align:center;">Imagem da Promoção </h4>
+                </div>
+                <div class="modal-body">
+                    <form id="CompanyForm" name="CompanyForm" ng-submit="sendRefusePromotion(promotion)" novalidate>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Motivo da Recusa</label>
+                            <textarea class="form-control" name="recusedMotive" required id="recusedMotive" placeholder="Motivo da Recusa" ng-model="promotion.RefusedReason"></textarea>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary" data-dismiss="modal">Salvar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
